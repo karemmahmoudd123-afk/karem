@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق الملاحظات | Notes App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-sticky-note"></i>
+                    <h1>تطبيق الملاحظات</h1>
+                </div>
+                <p class="subtitle">خزن وأدير ملاحظاتك بكل سهولة</p>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="app-content">
+            <!-- Add Note Section -->
+            <section class="add-note-section">
+                <h2><i class="fas fa-plus-circle"></i> إضافة ملاحظة جديدة</h2>
+                <div class="input-container">
+                    <div class="input-group">
+                        <input 
+                        type="text" 
+                        id="noteInput" 
+                        placeholder="اكتب ملاحظتك هنا..."
+                        maxlength="500"
+                        autocomplete="off"
+                        autofocus
+                        >
+                        <button id="addNoteBtn" class="btn btn-primary">
+                            <i class="fas fa-plus"></i>
+                            <span>إضافة</span>
+                        </button>
+                    </div>
+                    <div class="input-info">
+                        <span class="char-counter" id="charCounter">0/500</span>
+                        <span class="hint"><i class="fas fa-keyboard"></i> اضغط Enter للإضافة</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notes List Section -->
+            <section class="notes-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-list"></i> ملاحظاتي</h2>
+                    <div class="stats" id="statsContainer">
+                        <div class="stat-item">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>عدد الملاحظات: <span id="notesCount">0</span></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Notes Container -->
+                <div class="notes-container" id="notesContainer">
+                    <!-- Loading State -->
+                    <div class="loading-state" id="loadingState">
+                        <div class="spinner">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <p>جاري تحميل الملاحظات...</p>
+                    </div>
+                    
+                    <!-- Empty State -->
+                    <div class="empty-state" id="emptyState">
+                        <i class="fas fa-clipboard"></i>
+                        <h3>لا توجد ملاحظات</h3>
+                        <p>ابدأ بإضافة ملاحظتك الأولى!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <p>
+                    <i class="fas fa-code"></i>
+                    تم البناء باستخدام 
+                    <span class="tech">Supabase</span>
+                    و
+                    <span class="tech">JavaScript</span>
+                </p>
+                <p class="copyright">
+                    &copy; <span id="currentYear">2024</span> تطبيق الملاحظات
+                </p>
+            </div>
+        </footer>
+
+        <!-- Notification Container -->
+        <div id="notificationContainer"></div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</html>
