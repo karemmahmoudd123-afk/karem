@@ -3,8 +3,8 @@
 // ============================================
 
 // ⚠️ استخدم المفتاح الجديد Publishable Key
-const SUPABASE_URL = 'https://cbomnrqxwmflsvigbock.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_XySffZObKYUv_NB7FwsKmA_C7DmySUj';
+const SUPABASE_URL = 'https://onqsvzjaatsvqihlcxoh.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_TaxKDmZGv1JOwCxcnhpMKQ_MfcPkJP2';
 
 // تهيئة Supabase Client مرة واحدة فقط
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
@@ -625,4 +625,5 @@ function setupRealtime() {
 }
 
 // تفعيل الاتصال المباشر (اختياري)
+
 setupRealtime();
